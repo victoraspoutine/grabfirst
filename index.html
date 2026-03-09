@@ -36,23 +36,11 @@
       line-height: 1.6;
     }
 
-    /* ─── Grid bg ─── */
+    /* ─── Subtle bg glow ─── */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(124,58,237,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(124,58,237,.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-
-    /* ─── Noise overlay ─── */
-    body::after {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      opacity: .025;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      background-size: 180px;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,.08) 0%, transparent 60%);
     }
 
     section { position: relative; z-index: 1; }
@@ -78,9 +66,9 @@
     }
 
     .nav-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 100px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .75rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 100px;
       border: 1px solid rgba(6,182,212,.35);
       color: var(--cyan); background: rgba(6,182,212,.07);
     }
@@ -103,12 +91,12 @@
 
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .8rem; font-weight: 600;
       color: var(--cyan);
       border: 1px solid rgba(6,182,212,.3);
       background: rgba(6,182,212,.06);
-      padding: 6px 14px; border-radius: 100px;
+      padding: 7px 16px; border-radius: 100px;
       margin-bottom: 28px;
       animation: fadeUp .6s ease both;
     }
@@ -184,12 +172,12 @@
       margin-top: 60px;
       animation: fadeUp .6s .5s ease both;
     }
-    .bar-label { font-family:'JetBrains Mono',monospace; font-size:.65rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:14px; }
+    .bar-label { font-family:'Plus Jakarta Sans',sans-serif; font-size:.78rem; font-weight:500; color:var(--muted); margin-bottom:14px; }
     .platforms-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
 
     .p-pill {
       display:flex; align-items:center; gap:7px;
-      font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:500;
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:.82rem; font-weight:600;
       padding:7px 14px; border-radius:100px; border:1px solid;
     }
     .p-pill .dot { width:5px; height:5px; border-radius:50%; background:currentColor; animation:blink 2s infinite; }
@@ -199,7 +187,7 @@
     .p-pill:nth-child(4) { color:#1877f2; border-color:rgba(24,119,242,.35); background:rgba(24,119,242,.07); }
 
     /* ─── SECTION LABELS ─── */
-    .s-label { font-family:'JetBrains Mono',monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.12em; color:var(--violet-l); margin-bottom:14px; }
+    .s-label { font-family:'Plus Jakarta Sans',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--violet-l); margin-bottom:14px; }
     .s-title { font-family:'Syne',sans-serif; font-size:clamp(1.9rem,4vw,3rem); font-weight:800; letter-spacing:-.03em; line-height:1.1; color:#fff; margin-bottom:18px; }
     .s-desc { color:var(--muted-l); font-size:.97rem; line-height:1.72; max-width:520px; }
 
@@ -241,7 +229,7 @@
       background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(6,182,212,.18));
       border:1px solid rgba(124,58,237,.38);
       display:flex; align-items:center; justify-content:center;
-      font-family:'JetBrains Mono',monospace; font-size:1.1rem; font-weight:600; color:var(--violet-l);
+      font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:800; color:var(--violet-l);
       position:relative; z-index:1;
       transition:box-shadow .3s;
     }
@@ -251,8 +239,8 @@
 
     .ptags { display:flex; flex-wrap:wrap; gap:5px; justify-content:center; margin-top:12px; }
     .ptags span {
-      font-family:'JetBrains Mono',monospace; font-size:.65rem;
-      padding:3px 8px; border-radius:4px;
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:.72rem; font-weight:600;
+      padding:3px 9px; border-radius:4px;
       background:rgba(124,58,237,.1); border:1px solid rgba(124,58,237,.22);
       color:var(--violet-l);
     }
@@ -285,9 +273,9 @@
       background:rgba(124,58,237,.07);
     }
     .nc-icon { width:28px; height:28px; border-radius:8px; background:linear-gradient(130deg,#7c3aed,#06b6d4); display:flex; align-items:center; justify-content:center; font-size:13px; }
-    .nc-app { font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--violet-l); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
-    .nc-time { font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--muted); }
-    .nc-live { display:flex; align-items:center; gap:4px; margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--green); background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.28); border-radius:100px; padding:3px 8px; }
+    .nc-app { font-family:'Syne',sans-serif; font-size:.75rem; color:var(--violet-l); font-weight:700; }
+    .nc-time { font-family:'Plus Jakarta Sans',sans-serif; font-size:.68rem; color:var(--muted); }
+    .nc-live { display:flex; align-items:center; gap:4px; margin-left:auto; font-family:'Plus Jakarta Sans',sans-serif; font-size:.68rem; font-weight:600; color:var(--green); background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.28); border-radius:100px; padding:3px 10px; }
     .live-dot { width:5px; height:5px; border-radius:50%; background:var(--green); animation:blink 1.4s infinite; }
 
     .nc-body { padding:20px; }
@@ -295,17 +283,17 @@
     .platform-badge {
       display:inline-flex; align-items:center; gap:6px;
       padding:4px 10px; border-radius:6px; margin-bottom:14px;
-      font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:600;
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:.75rem; font-weight:700;
       background:rgba(0,189,126,.13); border:1px solid rgba(0,189,126,.38); color:#00bd7e;
     }
 
     .deal-name { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:5px; line-height:1.3; }
-    .deal-meta { font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--muted); margin-bottom:18px; }
+    .deal-meta { font-family:'Plus Jakarta Sans',sans-serif; font-size:.72rem; color:var(--muted); margin-bottom:18px; }
 
     .prices { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px; }
     .pr-box { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); border-radius:10px; padding:11px; text-align:center; }
-    .pr-lab { font-family:'JetBrains Mono',monospace; font-size:.58rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:5px; }
-    .pr-val { font-family:'JetBrains Mono',monospace; font-size:1.1rem; font-weight:600; }
+    .pr-lab { font-family:'Plus Jakarta Sans',sans-serif; font-size:.65rem; font-weight:500; color:var(--muted); margin-bottom:5px; }
+    .pr-val { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:800; }
     .pr-box.buy .pr-val { color:#fff; }
     .pr-box.resell .pr-val { color:var(--cyan); }
     .pr-box.margin .pr-val { color:var(--green); }
@@ -315,8 +303,8 @@
     .nc-btn-s { padding:10px 14px; background:transparent; border:1px solid rgba(255,255,255,.1); border-radius:8px; color:var(--muted-l); font-size:.8rem; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
 
     .nc-foot { display:flex; justify-content:space-between; align-items:center; padding:12px 18px; border-top:1px solid rgba(255,255,255,.04); }
-    .nc-speed { font-family:'JetBrains Mono',monospace; font-size:.63rem; color:var(--violet-l); }
-    .nc-count { font-family:'JetBrains Mono',monospace; font-size:.63rem; color:var(--muted); }
+    .nc-speed { font-family:'Plus Jakarta Sans',sans-serif; font-size:.7rem; font-weight:600; color:var(--violet-l); }
+    .nc-count { font-family:'Plus Jakarta Sans',sans-serif; font-size:.7rem; color:var(--muted); }
 
     /* ─── FOR WHO ─── */
     .for-who { padding:110px 0; }
@@ -350,7 +338,7 @@
     .counter-wrap { position:relative; z-index:1; display:inline-flex; flex-direction:column; align-items:center; }
     .big-num { font-family:'Syne',sans-serif; font-size:clamp(3.5rem,9vw,6.5rem); font-weight:800; letter-spacing:-.05em; line-height:1; background:linear-gradient(130deg,#a855f7,#06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .big-lab { font-size:.97rem; color:var(--muted-l); margin-top:8px; }
-    .sp-sub { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan); margin-top:18px; border:1px solid rgba(6,182,212,.28); padding:6px 14px; border-radius:100px; background:rgba(6,182,212,.06); }
+    .sp-sub { font-family:'Plus Jakarta Sans',sans-serif; font-size:.82rem; font-weight:500; color:var(--cyan); margin-top:18px; border:1px solid rgba(6,182,212,.28); padding:7px 16px; border-radius:100px; background:rgba(6,182,212,.06); }
 
     /* ─── CTA FINAL ─── */
     .cta-final { padding:110px 0; text-align:center; }
@@ -372,10 +360,10 @@
 
     .honest {
       display:inline-flex; align-items:center; gap:6px;
-      font-family:'JetBrains Mono',monospace; font-size:.7rem;
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:.78rem; font-weight:500;
       color:var(--muted); background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08); border-radius:100px;
-      padding:6px 14px; margin-top:20px;
+      padding:7px 16px; margin-top:20px;
     }
 
     /* ─── FOOTER ─── */
@@ -418,7 +406,7 @@
   <!-- ─── NAV ─── -->
   <nav>
     <div class="logo">GrabFirst</div>
-    <span class="nav-pill">Bêta fermée</span>
+    <span class="nav-pill">En développement</span>
   </nav>
 
   <!-- ─── HERO ─── -->
@@ -429,14 +417,14 @@
 
         <div class="eyebrow">
           <span class="blink"></span>
-          Surveillance multi-plateforme en temps réel
+          Alertes automatiques sur 4 plateformes
         </div>
 
-        <h1>Voyez le deal<br><span class="grad">avant tout le monde</span></h1>
+        <h1>Soyez le premier<br><span class="grad">sur la bonne affaire</span></h1>
 
         <p class="hero-sub">
-          GrabFirst surveille Vinted, Leboncoin, eBay et Facebook Marketplace simultanément
-          et vous alerte en quelques secondes — avec l'estimation de marge intégrée.
+          GrabFirst surveille Vinted, Leboncoin, eBay et Facebook Marketplace en même temps
+          et vous prévient en quelques secondes — avec le bénéfice potentiel déjà calculé.
         </p>
 
         <form class="email-form" id="hero-form">
@@ -445,10 +433,10 @@
         </form>
         <div class="form-success" id="hero-success">✓ C'est noté ! On vous écrit dès que GrabFirst est prêt.</div>
 
-        <p class="hero-footnote">On cherche des testeurs. Gratuit pendant la bêta. Sans engagement.</p>
+        <p class="hero-footnote">On cherche des testeurs. Gratuit. Sans engagement.</p>
 
         <div class="platforms-bar">
-          <p class="bar-label">Plateformes surveillées</p>
+          <p class="bar-label">Sites surveillés en permanence</p>
           <div class="platforms-row">
             <div class="p-pill"><span class="dot"></span> Vinted</div>
             <div class="p-pill"><span class="dot"></span> Leboncoin</div>
@@ -464,30 +452,30 @@
   <!-- ─── PROBLÈME ─── -->
   <section class="problem">
     <div class="container">
-      <div class="s-label">// Le problème</div>
-      <h2 class="s-title">Vous ratez les meilleurs deals<br>parce que...</h2>
-      <p class="s-desc">Les bonnes affaires disparaissent en quelques minutes. La surveillance manuelle, c'est un job à plein temps que vous ne pouvez pas tenir.</p>
+      <div class="s-label">Le problème</div>
+      <h2 class="s-title">Vous ratez les meilleures annonces<br>parce que...</h2>
+      <p class="s-desc">Les bonnes affaires disparaissent en quelques minutes. Surveiller soi-même quatre sites à la fois, c'est un travail à plein temps.</p>
 
       <div class="problem-grid">
         <div class="p-card">
           <div class="icon">⏱</div>
-          <h3>Vous êtes trop lent</h3>
-          <p>Un Jordan 1 à 80€ part en 3 minutes. Le temps d'ouvrir l'appli, de rafraîchir la page, c'est terminé. Les acheteurs rapides — souvent des bots — gagnent toujours.</p>
+          <h3>Vous arrivez toujours trop tard</h3>
+          <p>Une paire de Nike à 80€ part en 3 minutes. Le temps d'ouvrir l'application et de rafraîchir la page, quelqu'un d'autre a déjà acheté.</p>
         </div>
         <div class="p-card">
           <div class="icon">👀</div>
           <h3>Impossible de tout surveiller</h3>
-          <p>Vinted d'un côté, Leboncoin de l'autre, eBay dans un troisième onglet, Facebook Marketplace en parallèle. C'est épuisant et vous ratez forcément quelque chose.</p>
+          <p>Vinted d'un côté, Leboncoin de l'autre, eBay dans un troisième onglet... Vous ne pouvez pas être partout en même temps, et vous ratez forcément quelque chose.</p>
         </div>
         <div class="p-card">
           <div class="icon">📊</div>
-          <h3>Pas d'estimation de marge</h3>
-          <p>85€ sur Vinted, est-ce que ça vaut le coup ? Vous perdez un temps précieux à vérifier les prix de revente sur StockX, Vestiaire ou eBay à la main.</p>
+          <h3>Vous ne savez pas si ça vaut le coup</h3>
+          <p>85€ sur Vinted, c'est une bonne affaire ou pas ? Vous perdez du temps à aller vérifier les prix sur d'autres sites avant de décider.</p>
         </div>
         <div class="p-card">
           <div class="icon">😴</div>
-          <h3>Vous dormez, eux non</h3>
-          <p>Les meilleures annonces apparaissent à 2h du matin ou pendant votre réunion de 14h. Les bots et les pros sont là 24/7. Vous, non. Et ça se voit dans vos résultats.</p>
+          <h3>Les meilleures annonces tombent la nuit</h3>
+          <p>Les plus belles trouvailles apparaissent à 2h du matin ou pendant que vous travaillez. Pendant ce temps, d'autres acheteurs guettent en permanence.</p>
         </div>
       </div>
     </div>
@@ -496,28 +484,28 @@
   <!-- ─── COMMENT ÇA MARCHE ─── -->
   <section class="how">
     <div class="container">
-      <div class="s-label">// Comment ça marche</div>
-      <h2 class="s-title">Simple. Rapide. Efficace.</h2>
-      <p class="s-desc">Trois étapes pour ne plus jamais rater un deal qui correspond à vos critères.</p>
+      <div class="s-label">Comment ça marche</div>
+      <h2 class="s-title">Trois étapes, c'est tout.</h2>
+      <p class="s-desc">Vous configurez une fois, GrabFirst fait le reste en permanence.</p>
 
       <div class="steps">
         <div class="step">
-          <div class="step-num">01</div>
-          <h3>Définissez vos critères</h3>
-          <p>Marque, modèle, taille, prix max, état, mots-clés. GrabFirst sait exactement ce que vous cherchez.</p>
+          <div class="step-num">1</div>
+          <h3>Dites-nous ce que vous cherchez</h3>
+          <p>Marque, taille, prix maximum, état du produit. GrabFirst sait exactement ce qui vous intéresse.</p>
         </div>
         <div class="step">
-          <div class="step-num">02</div>
-          <h3>GrabFirst surveille tout</h3>
-          <p>Scan continu en temps réel sur les 4 plateformes en même temps, même quand vous dormez.</p>
+          <div class="step-num">2</div>
+          <h3>On surveille à votre place</h3>
+          <p>GrabFirst vérifie les nouvelles annonces en continu sur les 4 sites, même quand vous dormez.</p>
           <div class="ptags">
             <span>Vinted</span><span>Leboncoin</span><span>eBay</span><span>FB Marketplace</span>
           </div>
         </div>
         <div class="step">
-          <div class="step-num">03</div>
-          <h3>Alerte + marge calculée</h3>
-          <p>Notification instantanée avec prix d'achat, prix de revente estimé et marge nette calculée.</p>
+          <div class="step-num">3</div>
+          <h3>Vous recevez une alerte</h3>
+          <p>Dès qu'une annonce correspond, vous êtes prévenu avec le prix affiché et ce que vous pourriez en tirer à la revente.</p>
         </div>
       </div>
     </div>
@@ -529,17 +517,17 @@
       <div class="mockup-wrap">
 
         <div class="mockup-text">
-          <div class="s-label">// Exemple d'alerte</div>
-          <h2 class="s-title">Une notification.<br>Une décision.</h2>
-          <p class="s-desc">GrabFirst vous donne tout en un coup d'œil : le deal, la plateforme, et votre marge potentielle. Vous n'avez plus qu'à cliquer — ou ignorer.</p>
+          <div class="s-label">Exemple d'alerte</div>
+          <h2 class="s-title">Tout ce qu'il faut<br>en un coup d'œil.</h2>
+          <p class="s-desc">GrabFirst vous envoie une notification avec le prix de l'annonce et une estimation de ce que vous pourriez en tirer à la revente. Vous décidez en 5 secondes.</p>
           <div class="stat-row">
             <div>
               <div class="stat-val">&lt;30s</div>
-              <div class="stat-lab">délai d'alerte moyen</div>
+              <div class="stat-lab">entre la publication et votre alerte</div>
             </div>
             <div>
               <div class="stat-val">4</div>
-              <div class="stat-lab">plateformes en simultané</div>
+              <div class="stat-lab">sites surveillés en même temps</div>
             </div>
           </div>
         </div>
@@ -552,7 +540,7 @@
               <div class="nc-app">GrabFirst</div>
               <div class="nc-time">À l'instant</div>
             </div>
-            <div class="nc-live"><span class="live-dot"></span> LIVE</div>
+            <div class="nc-live"><span class="live-dot"></span> En direct</div>
           </div>
 
           <div class="nc-body">
@@ -576,14 +564,14 @@
             </div>
 
             <div class="nc-actions">
-              <button class="nc-btn-p">Voir le deal →</button>
+              <button class="nc-btn-p">Voir l'annonce →</button>
               <button class="nc-btn-s">Ignorer</button>
             </div>
           </div>
 
           <div class="nc-foot">
-            <span class="nc-speed">⚡ Détecté en 18 secondes</span>
-            <span class="nc-count">3 alertes aujourd'hui</span>
+            <span class="nc-speed">⚡ Alerte envoyée en 18 secondes</span>
+            <span class="nc-count">3 alertes reçues aujourd'hui</span>
           </div>
         </div>
 
@@ -594,30 +582,30 @@
   <!-- ─── POUR QUI ─── -->
   <section class="for-who">
     <div class="container">
-      <div class="s-label">// Pour qui</div>
-      <h2 class="s-title">Fait pour les chasseurs sérieux</h2>
-      <p class="s-desc">Que vous revendiez à côté ou à plein temps, GrabFirst travaille pour vous en permanence.</p>
+      <div class="s-label">Pour qui</div>
+      <h2 class="s-title">Pour ceux qui revendent<br>ou qui cherchent à bien acheter</h2>
+      <p class="s-desc">Que ce soit pour arrondir vos fins de mois ou en faire votre activité principale, GrabFirst surveille à votre place.</p>
 
       <div class="who-grid">
         <div class="who-card">
           <span class="who-emoji">👟</span>
-          <h3>Sneakers</h3>
-          <p>Jordans, Yeezys, Dunks. Trouvez les paires sous-cotées avant les bots et les autres resellers.</p>
+          <h3>Baskets et mode</h3>
+          <p>Jordans, Nike, Adidas, vêtements de marque... Soyez prévenu dès qu'une paire ou une pièce est mise en vente à bon prix, avant les autres.</p>
         </div>
         <div class="who-card">
           <span class="who-emoji">💻</span>
-          <h3>Tech</h3>
-          <p>MacBooks, PS5, iPhone d'occasion. Margez sur l'électronique reconditionnée avec des données fiables.</p>
+          <h3>High-tech</h3>
+          <p>MacBook, PlayStation, iPhone, appareils photo... Achetez moins cher que le marché et revendez avec une vraie marge.</p>
         </div>
         <div class="who-card">
           <span class="who-emoji">🕯</span>
-          <h3>Vintage</h3>
-          <p>Friperie de créateurs, vinyles, montres. Le bon deal au bon moment, avant tout le monde.</p>
+          <h3>Vintage et collection</h3>
+          <p>Vêtements anciens, vinyles, montres, objets rares... Repérez les pépites que les vendeurs n'ont pas su valoriser.</p>
         </div>
         <div class="who-card">
           <span class="who-emoji">🪑</span>
-          <h3>Mobilier</h3>
-          <p>Bauhaus, scandinave, industriel. Détectez les pièces sous-estimées dans votre zone géographique.</p>
+          <h3>Mobilier et déco</h3>
+          <p>Canapés, luminaires, chaises de créateurs... Trouvez des meubles bien en dessous de leur valeur, souvent près de chez vous.</p>
         </div>
       </div>
     </div>
@@ -636,8 +624,8 @@
   <section class="cta-final">
     <div class="container">
       <div class="cta-box">
-        <h2>Rejoignez les premiers testeurs</h2>
-        <p>On construit GrabFirst en ce moment. On cherche des revendeurs actifs pour tester l'outil avec nous et façonner le produit. C'est gratuit, sans engagement, et vos retours comptent vraiment.</p>
+        <h2>Vous voulez être parmi les premiers ?</h2>
+        <p>GrabFirst est en cours de développement. On cherche des personnes qui revendent régulièrement pour tester l'outil avec nous. C'est gratuit, sans engagement — et si quelque chose ne va pas, on veut le savoir.</p>
 
         <form class="email-form" id="cta-form">
           <input class="email-input" type="email" id="cta-email" placeholder="votre@email.com" required>
@@ -645,7 +633,7 @@
         </form>
         <div class="form-success" id="cta-success">✓ C'est noté ! On vous écrit dès que GrabFirst est prêt.</div>
 
-        <div class="honest">🛠 En développement · Honnête et transparent</div>
+        <div class="honest">🛠 En développement · On joue la transparence</div>
       </div>
     </div>
   </section>
